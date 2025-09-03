@@ -1,0 +1,35 @@
+openapi: 3.0.3
+info:
+  title: STD24206
+  description: This is a specification of STD24206
+  version: 1.0.0
+servers:
+  - url: "http://localhost:8000"
+paths:
+  /cars:
+    get:
+      responses:
+        200:
+          description: List of cars
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    - id:
+                        type: integer
+                    - brand:
+                        type: string
+                    - model:
+                        type: string
+                    - characteristic:
+                        type: object
+                        items:
+                          properties:
+                            - max_speed:
+                                type: number
+                            - max_fuel_capacity:
+                                type: number
+
